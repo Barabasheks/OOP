@@ -31,7 +31,7 @@ public class IniParser {
             while (i < line.length() && line.charAt(i) != ';') {
                 valueBuilder.append(line.charAt(i));
                 if (line.charAt(i) == '.') dotNum++;
-                if ((line.charAt(i) > '9' || line.charAt(i) < '0') && line.charAt(i) != '.') onlyNums = false;
+                if ((line.charAt(i) > '9' || line.charAt(i) < '0') && line.charAt(i) != '.' && line.charAt(i) != '-') onlyNums = false;
                 i++;
             }
             String value = valueBuilder.toString();
