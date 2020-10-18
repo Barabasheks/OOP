@@ -3,6 +3,7 @@ package com.company;
 public abstract class LandTransport implements Transport {
     protected abstract double getRestInterval();
     protected abstract double restDuration(int numRest);
+    public abstract double getSpeed();
 
     @Override
     public double timeDistance(double distance) {
