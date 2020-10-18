@@ -1,9 +1,12 @@
 package com.company;
 
 public class BactrianCamel extends LandTransport {
-    public BactrianCamel(){
-        speed = 10;
-        restInterval = 30;
+    private final double speed = 10;
+    private final double restInterval = 30;
+
+    @Override
+    protected double getRestInterval() {
+        return restInterval;
     }
 
     protected double restDuration(int numRest) {
@@ -11,5 +14,10 @@ public class BactrianCamel extends LandTransport {
             return 5;
         else
             return 8;
+    }
+
+    @Override
+    public double getSpeed() {
+        return speed;
     }
 }

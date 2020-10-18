@@ -1,9 +1,7 @@
 package com.company;
 
 public class MagicCarpet extends AirTransport {
-    public MagicCarpet(){
-        speed = 10;
-    }
+    private final double speed = 10;
 
     @Override
     protected double distantReduce(double distant) {
@@ -15,5 +13,10 @@ public class MagicCarpet extends AirTransport {
             return 10;
         else
             return 5;
+    }
+
+    @Override
+    public double getSpeed() {
+        return speed;
     }
 }

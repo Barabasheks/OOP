@@ -2,19 +2,21 @@ package com.company;
 
 import java.util.ArrayList;
 
-public abstract class Race {
-    protected ArrayList<Transport> members = new ArrayList<>();
-    protected double distance;
+interface Race {
+    ArrayList<Transport> getMembers();
+    void setMembers(ArrayList<Transport> members);
+    double getDistance();
+    void setDistance(double distance);
 
-    public Transport start(){
+    default public Transport start(){
         Transport winner = null;
         double minTime = 0;
         boolean winnerIsNull = true;
-        for (var member: members){
-            if (winnerIsNull || minTime > member.timeDistance(distance)){
+        for (var member: getMembers()){
+            if (winnerIsNull || minTime > member.timeDistance(getDistance())){
                 winner = member;
                 winnerIsNull = false;
-                minTime = member.timeDistance(distance);
+                minTime = member.timeDistance(getDistance());
             }
         }
         return winner;

@@ -1,10 +1,8 @@
 package com.company;
 
 public class CamelSpeedboat extends LandTransport{
-    public CamelSpeedboat(){
-        speed = 40;
-        restInterval = 10;
-    }
+    private final double speed = 40;
+    private final double restInterval = 10;
 
     @Override
     protected double restDuration(int numRest) {
@@ -14,5 +12,15 @@ public class CamelSpeedboat extends LandTransport{
             return 6.5;
         else
             return 8;
+    }
+
+    @Override
+    public double getSpeed() {
+        return speed;
+    }
+
+    @Override
+    protected double getRestInterval() {
+        return restInterval;
     }
 }

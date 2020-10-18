@@ -59,22 +59,6 @@ public class Shop {
         }
     }
 
-    public static Shop findShopByOneProduct(Product product) {
-        double minPrice = 0;
-        boolean minShopIsNull = true;
-        Shop minShop = null;
-        for (var shop: allShops){
-            var catalogLine = shop.getCatalogLine(product);
-            if (catalogLine == null) continue;
-            if (catalogLine.getProductPrice() < minPrice || minShopIsNull){
-                minPrice = catalogLine.getProductPrice();
-                minShop = shop;
-                minShopIsNull = false;
-            }
-        }
-        return minShop;
-    }
-
     public ArrayList<Pair> canBuy(double money) {
         ArrayList<Pair> pairs = new ArrayList<>();
         for (var catalogLine: this.catalog){
@@ -100,7 +84,39 @@ public class Shop {
         return sumPrice;
     }
 
-    public static Shop findShopByProducts(Pair... pairs) {
+    public int getShopId() {
+        return shopId;
+    }
+
+    public String getShopName() {
+        return shopName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public ArrayList<CatalogLine> getCatalog() {
+        return catalog;
+    }
+
+    public static Shop findShopByOneProduct(@NotNull Product product) {
+        double minPrice = 0;
+        boolean minShopIsNull = true;
+        Shop minShop = null;
+        for (var shop: allShops){
+            var catalogLine = shop.getCatalogLine(product);
+            if (catalogLine == null) continue;
+            if (catalogLine.getProductPrice() < minPrice || minShopIsNull){
+                minPrice = catalogLine.getProductPrice();
+                minShop = shop;
+                minShopIsNull = false;
+            }
+        }
+        return minShop;
+    }
+
+    public static Shop findShopByProducts(@NotNull Pair... pairs) {
         double minSum = 0;
         boolean minShopIsNull = true;
         Shop minShop = null;
@@ -122,21 +138,5 @@ public class Shop {
             }
         }
         return minShop;
-    }
-
-    public int getShopId() {
-        return shopId;
-    }
-
-    public String getShopName() {
-        return shopName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public ArrayList<CatalogLine> getCatalog() {
-        return catalog;
     }
 }

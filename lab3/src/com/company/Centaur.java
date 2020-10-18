@@ -1,13 +1,21 @@
 package com.company;
 
 public class Centaur extends LandTransport{
-    public Centaur(){
-        speed = 15;
-        restInterval = 8;
+    private final double speed = 15;
+    private final double restInterval = 8;
+
+    @Override
+    protected double getRestInterval() {
+        return restInterval;
     }
 
     @Override
     protected double restDuration(int numRest) {
         return 2;
+    }
+
+    @Override
+    public double getSpeed() {
+        return speed;
     }
 }

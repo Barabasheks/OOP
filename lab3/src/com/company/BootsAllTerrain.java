@@ -1,9 +1,12 @@
 package com.company;
 
 public class BootsAllTerrain extends LandTransport {
-    public BootsAllTerrain(){
-        speed = 6;
-        restInterval = 60;
+    private final double speed = 6;
+    private final double restInterval = 60;
+
+    @Override
+    protected double getRestInterval() {
+        return restInterval;
     }
 
     @Override
@@ -12,5 +15,10 @@ public class BootsAllTerrain extends LandTransport {
             return 10;
         else
             return 5;
+    }
+
+    @Override
+    public double getSpeed() {
+        return speed;
     }
 }
