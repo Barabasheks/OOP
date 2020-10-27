@@ -4,9 +4,8 @@ import java.util.ArrayList;
 
 interface Race {
     ArrayList<Transport> getMembers();
-    void setMembers(ArrayList<Transport> members);
     double getDistance();
-    void setDistance(double distance);
+    void setDistance(double distance) throws IllegalArgumentException;
 
     default public Transport start(){
         Transport winner = null;

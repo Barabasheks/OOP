@@ -23,17 +23,13 @@ public class AllRace implements Race {
     }
 
     @Override
-    public void setMembers(ArrayList<Transport> members) {
-        this.members = members;
-    }
-
-    @Override
     public double getDistance() {
         return distance;
     }
 
     @Override
-    public void setDistance(double distance) {
+    public void setDistance(double distance) throws IllegalArgumentException{
+        if (distance <= 0) throw new IllegalArgumentException("Distance is not positive");
         this.distance = distance;
     }
 }
