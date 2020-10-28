@@ -1,4 +1,4 @@
 package com.company;
 
-public class Point {
+public class Delta {
 }
