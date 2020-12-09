@@ -3,12 +3,13 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Point implements IPoint {
+public class FullPoint implements IPoint {
     private ArrayList<IFile> fileList = new ArrayList<>();
     private int id;
     private Date date = new Date();
+    private String path;
 
-    public Point(int id){
+    public FullPoint(int id){
         this.id = id;
     }
 
@@ -38,6 +39,15 @@ public class Point implements IPoint {
 
     public Date getDate(){
         return date;
+    }
+
+    @Override
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path){
+        this.path = path;
     }
 
     @Override

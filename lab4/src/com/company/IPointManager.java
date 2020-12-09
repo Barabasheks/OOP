@@ -1,4 +1,7 @@
 package com.company;
 
-public interface IPointCreator {
+import java.util.ArrayList;
+
+public interface IPointManager {
+    IPoint makePoint(ArrayList<IPoint> points, IPoint currentPoint);
 }

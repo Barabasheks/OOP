@@ -1,5 +1,5 @@
 package com.company;
 
-public interface ISaver {
+public interface IPointSaver {
     void save(IPoint point);
 }
